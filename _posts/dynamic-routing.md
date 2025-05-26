@@ -8,5 +8,7 @@ author:
   picture: /assets/blog/authors/jj.jpeg
 ogImage:
   url: /assets/blog/dynamic-routing/cover.jpg
+sections:
+  - type: button
+    content: asdasd
 ---
-this is example
