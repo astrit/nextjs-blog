@@ -34,12 +34,27 @@ content:
         blocks:
           # Each item defines a possible block structure the user can select.
           # These typically use 'component' or define 'fields' directly.
-          - name: text
+          - name: button
             label: Add Text Block
             fields:
               - name: content
                 label: Text Content
-                type: rich-text
-              - name: content2
-                label: Text Content2
-                type: rich-text
+                type: rich-text 
+          - name: input
+            label: Add Text Block2
+            fields:
+              - name: content
+                label: Text Content
+                type: rich-text 
+          - name: image
+            label: Add Text Block2
+            fields:
+              - name: content
+                label: Text Content
+                type: rich-text 
+          - name: snippet
+            label: Add Text Block2
+            fields:
+              - name: content
+                label: Text Content
+                type: rich-text 
