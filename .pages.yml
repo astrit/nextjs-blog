@@ -40,3 +40,6 @@ content:
               - name: content
                 label: Text Content
                 type: rich-text
+              - name: content2
+                label: Text Content2
+                type: rich-text
