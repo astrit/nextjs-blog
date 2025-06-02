@@ -63,6 +63,14 @@ content:
         label: Overview
         list: true
         fields:
+          - name: title
+            label: Title
+            type: string
+          - name: tag
+            label: Tag
+            type: select
+            options:
+              values: [ H2, H3, H4, H5 ]
           - name: columns
             label: Column
             type: block
@@ -78,6 +86,20 @@ content:
                   - name: img-id
                     label: IMG ID
                     type: string
+              - name: rich-text
+                label: Rich Text
+                fields:
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: tag
+                    label: Tag
+                    type: select
+                    options:
+                      values: [ H2, H3, H4, H5 ]
+                  - name: content
+                    label: Text
+                    type: rich-text
               - name: snippet
                 label: Snippet
                 fields:
