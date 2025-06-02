@@ -98,8 +98,17 @@ content:
                     options:
                       values: [ H2, H3, H4, H5 ]
                   - name: content
-                    label: Text
+                    label: Rich Text
                     type: rich-text
+              - name: paragraph
+                label: Paragraph
+                fields:
+                  - name: tag
+                    label: Tag
+                    type: string
+                  - name: text
+                    label: Text
+                    type: text
               - name: snippet
                 label: Snippet
                 fields:
