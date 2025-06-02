@@ -16,15 +16,15 @@
   },
   "overview": [
     {
-      "title": "asdasd",
+      "title": "Section Main title",
       "tag": "H3",
       "cols": "1",
       "columns": [
         {
           "type": "rich-text",
-          "title": "asd",
+          "title": "Column Text Example",
           "tag": "H2",
-          "content": "asdasdasd"
+          "content": "This is some rich text example"
         },
         {
           "type": "snippet"
