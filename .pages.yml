@@ -69,30 +69,26 @@ content:
             list: true 
             blockKey: type  
             blocks:
-              - name: button
-                label: Button
-                fields:
-                  - name: content
-                    label: Text Content
-                    type: rich-text 
-              - name: input
-                label: Input
-                fields:
-                  - name: content
-                    label: Text Content
-                    type: rich-text 
               - name: image
                 label: Image
                 fields:
-                  - name: content
-                    label: Text Content
-                    type: rich-text 
+                  - name: caption
+                    label: Caption
+                    type: string 
+                  - name: img-id
+                    label: IMG ID
+                    type: string
               - name: snippet
                 label: Snippet
                 fields:
-                  - name: content
-                    label: Text Content
-                    type: rich-text
+                  - name: Snippet
+                    type: reference
+                    options:
+                      collection: snippets
+                      multiple: false
+                      search: "title"
+                      value: "{slug}"
+                      label: "{title}"
 
       - name: ux-text
         label: UX text
