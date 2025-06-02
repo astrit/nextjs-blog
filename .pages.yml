@@ -106,6 +106,9 @@ content:
                   - name: tag
                     label: Tag
                     type: string
+                  - name: size
+                    label: Size
+                    type: string
                   - name: text
                     label: Text
                     type: text
