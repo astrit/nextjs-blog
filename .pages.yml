@@ -71,8 +71,13 @@ content:
             type: select
             options:
               values: [ H2, H3, H4, H5 ]
+          - name: cols
+            label: Columns
+            type: select
+            options:
+              values: [ 1, 2, 3 ]
           - name: columns
-            label: Column
+            label: Columns
             type: block
             list: true 
             blockKey: type  
