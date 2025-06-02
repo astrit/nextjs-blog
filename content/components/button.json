@@ -1,0 +1,35 @@
+{
+  "title": "Button",
+  "slug": "button",
+  "beta": false,
+  "summary": "asdasd",
+  "tags": [
+    "Form"
+  ],
+  "category": [
+    "Components"
+  ],
+  "platform": {
+    "web": true,
+    "ios": true,
+    "android": false
+  },
+  "overview": [
+    {
+      "column": [
+        {
+          "sections": [
+            {
+              "type": "button",
+              "content": "asdasd"
+            },
+            {
+              "type": "input",
+              "content": "asdasdasd"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
