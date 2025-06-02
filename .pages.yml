@@ -64,7 +64,7 @@ content:
         list: true
         fields:
           - name: sections
-            label: Page Sections
+            label: Page Section
             type: block
             list: true 
             blockKey: type  
