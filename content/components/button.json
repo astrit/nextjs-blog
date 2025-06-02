@@ -33,7 +33,7 @@
       ]
     },
     {
-      "cols": "3",
+      "cols": "2",
       "columns": [
         {
           "type": "rich-text",
@@ -45,6 +45,26 @@
           "type": "image",
           "caption": "Caption of image",
           "img-id": "Id of the image"
+        }
+      ]
+    },
+    {
+      "cols": "3",
+      "columns": [
+        {
+          "type": "image",
+          "caption": "Image One",
+          "img-id": "image-id-1"
+        },
+        {
+          "type": "image",
+          "caption": "Image 2",
+          "img-id": "img-id-2"
+        },
+        {
+          "type": "image",
+          "caption": "Image 3",
+          "img-id": "img-id-3"
         }
       ]
     }
