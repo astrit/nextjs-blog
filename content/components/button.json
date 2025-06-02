@@ -16,14 +16,17 @@
   },
   "overview": [
     {
-      "sections": [
+      "title": "asdasd",
+      "tag": "H3",
+      "columns": [
         {
-          "type": "button",
-          "content": "Hello"
+          "type": "rich-text",
+          "title": "asd",
+          "tag": "H2",
+          "content": "asdasdasd"
         },
         {
-          "type": "input",
-          "content": "Hello"
+          "type": "snippet"
         }
       ]
     }
