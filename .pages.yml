@@ -75,7 +75,7 @@ content:
             label: Columns
             type: select
             options:
-              values: [ 1, 2, 3 ]
+              values: [ "1", "2", "3" ]
           - name: columns
             label: Columns
             type: block
