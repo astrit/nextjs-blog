@@ -63,8 +63,8 @@ content:
         label: Overview
         list: true
         fields:
-          - name: sections
-            label: Page Section
+          - name: columns
+            label: Column
             type: block
             list: true 
             blockKey: type  
