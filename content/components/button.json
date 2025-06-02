@@ -27,12 +27,26 @@
           "content": "This is some rich text example"
         },
         {
-          "type": "snippet"
+          "type": "snippet",
+          "Snippet": "snippet-one"
         }
       ]
     },
     {
-      "title": "Section 2"
+      "cols": "3",
+      "columns": [
+        {
+          "type": "rich-text",
+          "title": "Left Column",
+          "tag": "H3",
+          "content": "This is some rich text on another column"
+        },
+        {
+          "type": "image",
+          "caption": "Caption of image",
+          "img-id": "Id of the image"
+        }
+      ]
     }
   ]
 }
