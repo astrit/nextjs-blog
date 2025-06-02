@@ -16,18 +16,14 @@
   },
   "overview": [
     {
-      "column": [
+      "sections": [
         {
-          "sections": [
-            {
-              "type": "button",
-              "content": "asdasd"
-            },
-            {
-              "type": "input",
-              "content": "asdasdasd"
-            }
-          ]
+          "type": "button",
+          "content": "Hello"
+        },
+        {
+          "type": "input",
+          "content": "Hello"
         }
       ]
     }
