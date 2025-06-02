@@ -18,6 +18,7 @@
     {
       "title": "asdasd",
       "tag": "H3",
+      "cols": "1",
       "columns": [
         {
           "type": "rich-text",
