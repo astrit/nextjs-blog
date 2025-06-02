@@ -88,7 +88,7 @@ content:
                   - name: caption
                     label: Caption
                     type: string 
-                  - name: img-id
+                  - name: img
                     label: IMG ID
                     type: string
               - name: rich-text
