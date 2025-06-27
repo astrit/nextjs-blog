@@ -233,30 +233,23 @@ content:
                   - name: src
                     label: Image
                     type: image
-          - name: dodont
-            label: Columns
-            type: block
-            list: true
-            blockKey: type
-            blocks:
-              - name: image
-                label: Image
+              - name: contact
+                label: Contact information
+                type: object
+                list: true
                 fields:
-                  - name: caption
-                    label: Caption
+                  - name: first_name
+                    label: First name
                     type: string
-                  - name: width
-                    label: Width
+                  - name: last_name
+                    label: Last name
                     type: string
-                  - name: height
-                    label: Height
+                  - name: email
+                    label: Email address
                     type: string
-                  - name: ratio
-                    label: Ratio
+                  - name: phone
+                    label: Phone number
                     type: string
-                  - name: src
-                    label: Image
-                    type: image
 
       - name: ux-text
         type: object
