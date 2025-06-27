@@ -1,6 +1,7 @@
 media:
-  input: public/assets
+  input: data/assets
   output: /assets
+  path: stg.seb.io/assets
   categories: ["image"]
 content:
   - name: components
@@ -29,19 +30,87 @@ content:
         type: boolean
         default: false
       - { name: summary, label: Summary, type: string }
+      - { name: preamble, label: Preamble, type: text }
+      - name: anatomy
+        label: Anatomy
+        type: boolean
+        default: true
+      - { name: anatomy-overview, label: "Antomy: Overview", type: rich-text }
+      - { name: anatomy-details, label: "Antomy: Details", type: rich-text }
       - name: tags
         label: Tags
         type: select
         options:
-          creatable: true
           multiple: true
-          values: [Form, Buttons]
+          creatable: true
+          values:
+            - value: "action"
+              label: Action
+            - value: "button"
+              label: Button
+            - value: "data"
+              label: Data
+            - value: "date"
+              label: Date
+            - value: "date-range"
+              label: Date Range
+            - value: "editorial"
+              label: Editorial
+            - value: faq
+              label: FAQ
+            - value: "feedback"
+              label: Feedback
+            - value: "filter"
+              label: Filter
+            - value: "form"
+              label: Form
+            - value: "format"
+              label: Format
+            - value: "free-text"
+              label: Free Text
+            - value: "guidance"
+              label: Guidance
+            - value: "input"
+              label: Input
+            - value: "preloader"
+              label: Preloader
+            - value: "media"
+              label: Media
+            - value: "modal"
+              label: Modal
+            - value: "navigation"
+              label: Navigation
+            - value: "notification"
+              label: Notification
+            - value: "onboarding"
+              label: Onboarding
+            - value: "select"
+              label: Select
+            - value: "slide-out"
+              label: Slide Out
+            - value: "status"
+              label: Status
+            - value: "symbol"
+              label: Symbol
+            - value: "text"
+              label: Text
+            - value: "text-entry"
+              label: Text Entry
+            - value: "text-field"
+              label: Text Field
+            - value: "time"
+              label: Time
+            - value: "tooltip"
+              label: Tooltip
+            - value: "walkthrough"
+              label: Walkthrough
+
       - name: category
         label: Category
         type: select
         options:
           multiple: true
-          values: [Components, Elements, Layout, Tokens]
+          values: [Components, Elements, Layout, Tokens, Utils]
       - name: platform
         label: Platform
         type: object
@@ -58,6 +127,15 @@ content:
             label: Android
             type: boolean
             default: false
+      - name: compare
+        label: Compare
+        type: reference
+        options:
+          collection: components
+          multiple: false
+          search: "title"
+          value: "{title}"
+          label: "{title}"
       - name: overview
         type: object
         label: Overview
@@ -70,25 +148,28 @@ content:
             label: Tag
             type: select
             options:
-              values: [ H2, H3, H4, H5 ]
+              values: [H2, H3, H4, H5]
+          - name: section-content
+            label: Content
+            type: rich-text
           - name: cols
             label: Columns
             type: select
             options:
-              values: [ "1", "2", "3" ]
+              values: ["1", "2", "3"]
           - name: columns
             label: Columns
             type: block
-            list: true 
-            blockKey: type  
+            list: true
+            blockKey: type
             blocks:
-              - name: image
-                label: Image
+              - name: figma
+                label: Figma Node
                 fields:
                   - name: caption
                     label: Caption
-                    type: string 
-                  - name: img
+                    type: string
+                  - name: node
                     label: IMG ID
                     type: string
               - name: rich-text
@@ -101,7 +182,105 @@ content:
                     label: Tag
                     type: select
                     options:
-                      values: [ H2, H3, H4, H5 ]
+                      values: [H2, H3, H4, H5]
+                  - name: content
+                    label: Rich Text
+                    type: rich-text
+              - name: paragraph
+                label: Paragraph
+                fields:
+                  - name: tag
+                    label: Tag
+                    type: string
+                  - name: size
+                    label: Size
+                    type: string
+                  - name: text
+                    label: Text
+                    type: text
+              - name: snippet
+                label: Snippet
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: plain
+                    label: Plain
+                    type: boolean
+                  - name: Snippet
+                    type: reference
+                    options:
+                      collection: snippets
+                      multiple: false
+                      search: "title"
+                      value: "{slug}"
+                      label: "{title}"
+              - name: image
+                label: Image
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: width
+                    label: Width
+                    type: string
+                  - name: height
+                    label: Height
+                    type: string
+                  - name: ratio
+                    label: Ratio
+                    type: string
+                  - name: src
+                    label: Image
+                    type: image
+
+      - name: ux-text
+        type: object
+        label: UX text
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: tag
+            label: Tag
+            type: select
+            options:
+              values: [H2, H3, H4, H5]
+          - name: section-content
+            label: Content
+            type: rich-text
+          - name: cols
+            label: Columns
+            type: select
+            options:
+              values: ["1", "2", "3"]
+          - name: columns
+            label: Columns
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: figma
+                label: Figma Node
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: node
+                    label: IMG ID
+                    type: string
+              - name: rich-text
+                label: Rich Text
+                fields:
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: tag
+                    label: Tag
+                    type: select
+                    options:
+                      values: [H2, H3, H4, H5]
                   - name: content
                     label: Rich Text
                     type: rich-text
@@ -128,41 +307,115 @@ content:
                       search: "title"
                       value: "{slug}"
                       label: "{title}"
-
-      - name: ux-text
-        label: UX text
-        type: object
-        fields:
-          - name: section
-            label: Section
-            type: object
-            list: true
-            fields:
-              - { name: title, label: Title, type: string }
-              - { name: description, label: Description, type: rich-text }
               - name: image
                 label: Image
-                type: object
                 fields:
-                  - { name: id, label: ID, type: string }
-                  - { name: caption, label: Caption, type: string }
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: width
+                    label: Width
+                    type: string
+                  - name: height
+                    label: Height
+                    type: string
+                  - name: ratio
+                    label: Ratio
+                    type: string
+                  - name: src
+                    label: Image
+                    type: image
       - name: accessibility
-        label: Accessibility
         type: object
+        label: Accessibility
+        list: true
         fields:
-          - name: section
-            label: Section
-            type: object
+          - name: title
+            label: Title
+            type: string
+          - name: tag
+            label: Tag
+            type: select
+            options:
+              values: [H2, H3, H4, H5]
+          - name: section-content
+            label: Content
+            type: rich-text
+          - name: cols
+            label: Columns
+            type: select
+            options:
+              values: ["1", "2", "3"]
+          - name: columns
+            label: Columns
+            type: block
             list: true
-            fields:
-              - { name: title, label: Title, type: string }
-              - { name: description, label: Description, type: rich-text }
+            blockKey: type
+            blocks:
+              - name: figma
+                label: Figma Node
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: node
+                    label: IMG ID
+                    type: string
+              - name: rich-text
+                label: Rich Text
+                fields:
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: tag
+                    label: Tag
+                    type: select
+                    options:
+                      values: [H2, H3, H4, H5]
+                  - name: content
+                    label: Rich Text
+                    type: rich-text
+              - name: paragraph
+                label: Paragraph
+                fields:
+                  - name: tag
+                    label: Tag
+                    type: string
+                  - name: size
+                    label: Size
+                    type: string
+                  - name: text
+                    label: Text
+                    type: text
+              - name: snippet
+                label: Snippet
+                fields:
+                  - name: Snippet
+                    type: reference
+                    options:
+                      collection: snippets
+                      multiple: false
+                      search: "title"
+                      value: "{slug}"
+                      label: "{title}"
               - name: image
                 label: Image
-                type: object
                 fields:
-                  - { name: id, label: ID, type: string }
-                  - { name: caption, label: Caption, type: string }
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: width
+                    label: Width
+                    type: string
+                  - name: height
+                    label: Height
+                    type: string
+                  - name: ratio
+                    label: Ratio
+                    type: string
+                  - name: src
+                    label: Image
+                    type: image
 
   - name: pages
     label: Pages
@@ -175,7 +428,114 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: slug, label: Slug, type: string, required: true }
-      - { name: body, label: Body, type: rich-text }
+      - { name: summary, label: Summary, type: rich-text }
+      - name: sections
+        type: object
+        label: Sections
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: tag
+            label: Tag
+            type: select
+            options:
+              values: [H2, H3, H4, H5]
+          - name: section-content
+            label: Content
+            type: rich-text
+          - name: cols
+            label: Columns
+            type: select
+            options:
+              values: ["1", "2", "3"]
+          - name: columns
+            label: Columns
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: figma
+                label: Figma Node
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: node
+                    label: IMG ID
+                    type: string
+              - name: rich-text
+                label: Rich Text
+                fields:
+                  - name: title
+                    label: Title
+                    type: string
+                  - name: tag
+                    label: Tag
+                    type: select
+                    options:
+                      values: [H2, H3, H4, H5]
+                  - name: content
+                    label: Rich Text
+                    type: rich-text
+              - name: paragraph
+                label: Paragraph
+                fields:
+                  - name: tag
+                    label: Tag
+                    type: string
+                  - name: size
+                    label: Size
+                    type: string
+                  - name: text
+                    label: Text
+                    type: text
+              - name: snippet
+                label: Snippet
+                fields:
+                  - name: Snippet
+                    type: reference
+                    options:
+                      collection: snippets
+                      multiple: false
+                      search: "title"
+                      value: "{slug}"
+                      label: "{title}"
+              - name: image
+                label: Image
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: width
+                    label: Width
+                    type: string
+                  - name: height
+                    label: Height
+                    type: string
+                  - name: ratio
+                    label: Ratio
+                    type: string
+                  - name: src
+                    label: Image
+                    type: image  
+              - name: details
+                label: Details
+                fields:
+                  - name: name
+                    label: Name
+                    type: string
+                  - name: summary
+                    label: Summary
+                    type: string
+                  - name: open
+                    label: Open
+                    type: boolean
+                  - name: content
+                    label: Rich Text
+                    type: rich-text
+              
 
   - name: navigation
     label: Navigation
@@ -233,6 +593,12 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: slug, label: Slug, type: string, required: true }
+      - name: dependencies
+        label: Dependencies
+        type: select
+        options:
+          multiple: true
+          creatable: true
       - name: snippet_component
         label: Component
         type: reference
@@ -257,3 +623,21 @@ content:
     fields:
       - { name: title, label: Title, type: string }
       - { name: summary, label: Summary, type: rich-text }
+      - name: hero
+        label: Hero Snippet
+        type: reference
+        options:
+          collection: snippets
+          multiple: false
+          search: "{title}"
+          value: "{slug}"
+          label: "{title}"
+      - name: featured
+        label: Featured components
+        type: reference
+        options:
+          collection: components
+          multiple: true
+          search: "title,slug"
+          value: "{slug}"
+          label: "{title}"
