@@ -233,6 +233,30 @@ content:
                   - name: src
                     label: Image
                     type: image
+          - name: dodont
+            label: Columns
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: image
+                label: Image
+                fields:
+                  - name: caption
+                    label: Caption
+                    type: string
+                  - name: width
+                    label: Width
+                    type: string
+                  - name: height
+                    label: Height
+                    type: string
+                  - name: ratio
+                    label: Ratio
+                    type: string
+                  - name: src
+                    label: Image
+                    type: image
 
       - name: ux-text
         type: object
